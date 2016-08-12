@@ -22,7 +22,7 @@ public class WorkoutListFragment extends ListFragment {
     }
 
     static interface WorkoutListListener {
-        void itemClicked(int id);
+        void itemClicked(long id);
     }
 
     private WorkoutListListener listener;
@@ -46,7 +46,8 @@ public class WorkoutListFragment extends ListFragment {
         this.listener = (WorkoutListListener) activity;
     }
 
-    public void onListItemClick(ListView l, View v, int position, int id) {
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
         if (listener != null) {
             listener.itemClicked(id);
         }
